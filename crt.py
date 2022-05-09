@@ -932,7 +932,7 @@ def train_network(model_type, X_train, y_train, channel = 7, window_size = 107, 
     elif model_type == 'CRTNet_5':
         model = CRTNet_5(BasicBlock4, [1], nb_filter = num_filters, labcounts = 4, channel = channel , window_size = window_size)
     else:
-        print ('only support CNN model')
+        print ('only support CRTNet_4 model')
     if cuda:
         model = model.cuda()
     clf = Estimator(model)
@@ -962,7 +962,7 @@ def predict_network(model_type, X_test, channel = 7, window_size = 107, model_fi
     elif model_type == 'CRTNet_5':
         model = CRTNet_5(BasicBlock4, [1], nb_filter = num_filters, labcounts = 4, channel = channel , window_size = window_size)
     else:
-        print ('only support CNN model')
+        print ('only support CRTNet_4 model')
     if cuda:
         model = model.cuda()   
     model.load_state_dict(torch.load(model_file))
