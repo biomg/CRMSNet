@@ -976,7 +976,7 @@ def predict_network(model_type, X_test, channel = 7, window_size = 107, model_fi
             pred = np.concatenate((pred, pred_test1), axis = 0)
     return pred
         
-def run_ideepe(parser):
+def run(parser):
     #data_dir = './GraphProt_CLIP_sequences/'
     posi = parser.posi
     nega = parser.nega
@@ -1079,8 +1079,7 @@ def parse_arguments(parser):
 parser = argparse.ArgumentParser()
 args = parse_arguments(parser)
 print (args)
-#model_type = sys.argv[1]
-run_ideepe(args)
-# run_ideepe_on_graphprot()
+run(args)
+
 
 
